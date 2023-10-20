@@ -10,7 +10,7 @@ const searchEngine = process.env.SEARCH_ENGINE_ID;
 const api = express();
 
 const router = Router();
-router.get("/hello", (req, res) => res.send("Hello World!"));
+router.get("hello", (req, res) => res.send("Hello"))
 router.get("/gsearch", async (req, res) => {
     const query = req.query.q;
     const url = `https://customsearch.googleapis.com/customsearch/v1?key=${apiKey}&cx=${searchEngine}&q=${query}`
