@@ -1,6 +1,9 @@
 import express, { Router } from "express";
 import serverless from "serverless-http";
 
+// https://console.cloud.google.com/apis/
+// https://programmablesearchengine.google.com/controlpanel/all
+
 const apiKey = process.env.SEARCH_API_KEY;
 const searchEngine = process.env.SEARCH_ENGINE_ID;
 
