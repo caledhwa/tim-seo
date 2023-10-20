@@ -1,8 +1,8 @@
 import express, { Router } from "express";
 import serverless from "serverless-http";
 
-const apiKey = "AIzaSyCKH-2ww3Jo7vfBQBTB_TYlGqEgwMdlYok";
-const searchEngine = "45c251cb35f0e4e74";
+const apiKey = process.env.SEARCH_API_KEY;
+const searchEngine = process.env.SEARCH_ENGINE_ID;
 
 const api = express();
 
