@@ -1,0 +1,22 @@
+{
+  "name": "tim-seo",
+  "version": "1.0.0",
+  "description": "Tim's SEO tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caledhwa/tim-seo.git"
+  },
+  "author": "Cale Hoopes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/caledhwa/tim-seo/issues"
+  },
+  "homepage": "https://github.com/caledhwa/tim-seo#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
