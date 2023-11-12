@@ -11,12 +11,16 @@ const api = express();
 
 const router = Router();
 router.get("hello", (req, res) => res.send("Hello"))
+
+// title field, snippet field
+
 router.get("/gsearch", async (req, res) => {
     const query = req.query.q;
     const url = `https://customsearch.googleapis.com/customsearch/v1?key=${apiKey}&cx=${searchEngine}&q=${query}`
     const response = await fetch(url);
     const json = await response.json();
-    res.send(json);
+    const titleSnippets = items.map(i => ({ title: i.title, snippet: i.snippet }));
+    res.send(items);
 });
 
 api.use("/api/", router);
