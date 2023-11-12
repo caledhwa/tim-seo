@@ -39,7 +39,6 @@ function displayPhrases(items) {
     
     // reduce to text blob
     const text = items.map(i => (`${i.title} ${i.snippet}`)).join(' ');
-    return text;
 
     // Find two-word phrases and count their frequencies
     const phrases = findTwoWordPhrases(text);
