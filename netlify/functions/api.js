@@ -19,8 +19,8 @@ router.get("/gsearch", async (req, res) => {
     const url = `https://customsearch.googleapis.com/customsearch/v1?key=${apiKey}&cx=${searchEngine}&q=${query}`
     const response = await fetch(url);
     const json = await response.json();
-    // const titleSnippets = json.items.map(i => ({ title: i.title, snippet: i.snippet }));
-    res.send(json);
+    const titleSnippets = json.items.map(i => ({ title: i.title, snippet: i.snippet }));
+    res.send(titleSnippets);
 });
 
 api.use("/api/", router);
