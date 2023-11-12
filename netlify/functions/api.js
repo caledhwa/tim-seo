@@ -38,9 +38,8 @@ function countFrequencies(phrases) {
 function displayPhrases(items) {
     
     // reduce to text blob
-    const text = items.map(i => {
-        (`${i.title} ${i.snippet}`)
-    }).join(' ');
+    const text = items.map(i => (`${i.title} ${i.snippet}`)).join(' ');
+    return text;
 
     // Find two-word phrases and count their frequencies
     const phrases = findTwoWordPhrases(text);
@@ -50,8 +49,6 @@ function displayPhrases(items) {
     const sortedPhrases = Object.entries(frequencies).sort((a, b) => b[1] - a[1]).slice(0, 30);
     return sortedPhrases;
 }
-
-// title field, snippet field
 
 router.get("/gsearch", async (req, res) => {
     const query = req.query.q;
@@ -63,5 +60,4 @@ router.get("/gsearch", async (req, res) => {
 });
 
 api.use("/api/", router);
-
 export const handler = serverless(api);
