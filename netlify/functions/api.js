@@ -1,6 +1,37 @@
 import express, { Router } from "express";
 import serverless from "serverless-http";
-import ignoreWords from 'ignoreWords.js';
+
+const ignoreWords = ["want", 
+                    "a", 
+                    "the", 
+                    "in", 
+                    "ve", 
+                    "re", 
+                    "an", 
+                    "as", 
+                    "can", 
+                    "and", 
+                    "is", 
+                    "what", 
+                    "need", 
+                    "of", 
+                    "with", 
+                    "to", 
+                    "who", 
+                    "do", 
+                    "it", 
+                    "if", 
+                    "you", 
+                    "for", 
+                    "i", 
+                    "your", 
+                    "not", 
+                    "only", 
+                    "been",
+                    "com", 
+                    "dc",
+                    "we",
+                    "are"];
 
 // https://console.cloud.google.com/apis/
 // https://programmablesearchengine.google.com/controlpanel/all
