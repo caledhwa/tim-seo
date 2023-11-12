@@ -78,7 +78,7 @@ function displayPhrases(items) {
     // Sort phrases by frequency and take the top 30 results
     const sortedPhrases = Object.entries(frequencies).sort((a, b) => b[1] - a[1]).slice(0, 30);
     const csv = sortedPhrases.map(i => (`${i[0]},${i[1]}\n`))
-    return sortedPhrases;
+    return csv;
 }
 
 router.get("/gsearch", async (req, res) => {
