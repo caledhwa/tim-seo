@@ -46,7 +46,6 @@ router.get("hello", (req, res) => res.send("Hello"))
 
 
 function findTwoWordPhrases(text) {
-    // const ignoreWords = ["want","a", "the", "in", "ve", "re", "an", "as", "can", "and", "is", "what", "need", "of", "with", "to", "who", "do", "it", "if", "you", "for", "i", "your", "not", "only", "been", "com", "dc"];
     const words = text.match(/\b\w+\b/g).filter(word => !ignoreWords.includes(word.toLowerCase()) && word.length > 1);
     if (!words || words.length < 2) return [];
     const phrases = [];
@@ -78,6 +77,7 @@ function displayPhrases(items) {
 
     // Sort phrases by frequency and take the top 30 results
     const sortedPhrases = Object.entries(frequencies).sort((a, b) => b[1] - a[1]).slice(0, 30);
+    const csv = sortedPhrases.map(i => (`${i[0]},${i[1]}`))
     return sortedPhrases;
 }
 
