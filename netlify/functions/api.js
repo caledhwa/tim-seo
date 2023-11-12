@@ -1,5 +1,6 @@
 import express, { Router } from "express";
 import serverless from "serverless-http";
+import ignoreWords from 'ignoreWords.js';
 
 // https://console.cloud.google.com/apis/
 // https://programmablesearchengine.google.com/controlpanel/all
@@ -14,7 +15,7 @@ router.get("hello", (req, res) => res.send("Hello"))
 
 
 function findTwoWordPhrases(text) {
-    const ignoreWords = ["want","a", "the", "in", "ve", "re", "an", "as", "can", "and", "is", "what", "need", "of", "with", "to", "who", "do", "it", "if", "you", "for", "i", "your", "not", "only", "been", "com", "dc"];
+    // const ignoreWords = ["want","a", "the", "in", "ve", "re", "an", "as", "can", "and", "is", "what", "need", "of", "with", "to", "who", "do", "it", "if", "you", "for", "i", "your", "not", "only", "been", "com", "dc"];
     const words = text.match(/\b\w+\b/g).filter(word => !ignoreWords.includes(word.toLowerCase()) && word.length > 1);
     if (!words || words.length < 2) return [];
     const phrases = [];
