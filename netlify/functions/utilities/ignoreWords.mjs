@@ -28,6 +28,9 @@ const ignoreWords = ["want",
                     "com", 
                     "dc",
                     "we",
-                    "are"];
+                    "are",
+                    "but",
+                    "carrus",
+                    "io"];
 
 export default ignoreWords;
