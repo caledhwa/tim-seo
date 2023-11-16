@@ -1,5 +1,6 @@
 const ignoreWords = ["want", 
-                    "a", 
+                    "a",
+                     "at",
                     "the", 
                     "in", 
                     "ve", 
@@ -31,6 +32,7 @@ const ignoreWords = ["want",
                     "are",
                     "but",
                     "carrus",
-                    "io"];
+                    "io",
+                    "ivy"];
 
 export default ignoreWords;
