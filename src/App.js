@@ -23,9 +23,9 @@ function App() {
     fetch(`/api/gsearch?q=${search}`)
       .then((response) => response.json())
       .then((json) => {
-        const factor2Phrases = json.factor2.map(item => item.phrase).slice(0, 20);
-        const factor3Phrases = json.factor3.map(item => item.phrase).slice(0, 20);
-        const factor4Phrases = json.factor4.map(item => item.phrase).slice(0, 20);
+        const factor2Phrases = json.factor2.map(item => item.phrase).slice(0, 40);
+        const factor3Phrases = json.factor3.map(item => item.phrase).slice(0, 40);
+        const factor4Phrases = json.factor4.map(item => item.phrase).slice(0, 40);
 
         const combinedData = factor2Phrases.map((item, index) => ({
           id: index,
